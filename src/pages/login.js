@@ -11,28 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const styles = {
-  form: {
-    textAlign: "center",
-  },
-  image: {
-    margin: "10px auto 10px auto",
-  },
-  pageTitle: {
-    margin: "10px auto 10px auto",
-  },
-  textField: {
-    margin: "10px auto 10px auto",
-  },
-  button: {
-    marginTop: 20,
-  },
-  customError: {
-    color: "red",
-    fontSize: "0.8rem",
-    marginTop: 10,
-  },
-};
+const styles = (theme) => ({ ...theme.styles });
 
 class login extends Component {
   constructor() {
@@ -62,6 +41,7 @@ class login extends Component {
       .post("/login", userData)
       .then((res) => {
         console.log(res.data);
+        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`);
         this.setState({
           loading: false,
         });
@@ -125,12 +105,21 @@ class login extends Component {
               variant="contained"
               color="primary"
               className={classes.button}
+              disabled={loading}
             >
               Login
+              {loading && (
+                <CircularProgress size={30} className={classes.progress} />
+              )}
             </Button>
             <br />
-            <small>
-              Don't have an account ? Sign up <Link to="/signup">here</Link> !
+            <br />
+            <small className={classes.small}>
+              Don't have an account ? Sign up
+              <Link to="/signup" className={classes.link}>
+                here
+              </Link>
+              !
             </small>
           </form>
         </Grid>
