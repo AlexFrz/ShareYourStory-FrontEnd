@@ -2,8 +2,6 @@ import Grid from "@material-ui/core/Grid";
 import React, { Component } from "react";
 import axios from "axios";
 import Story from "../components/Story";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
 
 class home extends Component {
   state = {

@@ -6,6 +6,10 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import themeFile from "./util/theme";
 import jwtDecode from "jwt-decode";
 
+// Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 // Pages
 import home from "./pages/home";
 import login from "./pages/login";
@@ -25,6 +29,7 @@ if (token) {
   console.log(decodedToken);
   if (decodedToken.exp * 10000 < Date.now()) {
     authenticated = false;
+    localStorage.clear();
   } else {
     authenticated = true;
   }
@@ -33,7 +38,7 @@ if (token) {
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
-      <div className="app">
+      <Provider store={store}>
         <Router>
           <Navbar />
           <div className="app__container">
@@ -54,7 +59,7 @@ function App() {
             </Switch>
           </div>
         </Router>
-      </div>
+      </Provider>
     </MuiThemeProvider>
   );
 }
