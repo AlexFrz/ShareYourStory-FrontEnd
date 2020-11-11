@@ -1,6 +1,21 @@
 import React, { useEffect, useRef } from "react";
+import "./Hamburger.scss";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import africa from "../images/africanchild.jpg";
+import india from "../images/indianwoman.jpg";
+import market from "../images/market.jpeg";
+import asia from "../images/monk.jpg";
+import southamerica from "../images/southamerica.jpg";
+import hijab from "../images/hijab.jpeg";
+
+const cities = [
+  { name: "Africa", image: market },
+  { name: "India", image: india },
+  { name: "South America", image: southamerica },
+  { name: "Middle East", image: hijab },
+  { name: "Asia", image: asia },
+];
 
 const Hamburger = ({ state }) => {
   // Vars for our handmaded dom nodes
@@ -54,7 +69,7 @@ const Hamburger = ({ state }) => {
       y: 100,
       delay: 0.1,
       ease: "power3.inOut",
-      stahher: {
+      stagger: {
         amount: 0.3,
       },
     });
@@ -82,6 +97,49 @@ const Hamburger = ({ state }) => {
       },
     });
   };
+
+  const handleCity = (city) => {
+    gsap.to(cityBackground, {
+      duration: 0,
+      background: `url(${city}) center center`,
+    });
+    gsap.to(cityBackground, {
+      duration: 0.4,
+      opacity: 1,
+      ease: "power3.inOut",
+    });
+    gsap.from(cityBackground, {
+      duration: 0.4,
+      skewY: 2,
+      transformOrigin: "right top",
+    });
+  };
+
+  const handleCityReturn = () => {
+    gsap.to(cityBackground, {
+      duration: 0.4,
+      opacity: 0,
+    });
+  };
+
+  const handleHover = (e) => {
+    gsap.to(e.target, {
+      duration: 0.3,
+      y: 3,
+      skewX: 4,
+      ease: "power1.inOut",
+    });
+  };
+
+  const handleHoverExit = (e) => {
+    gsap.to(e.target, {
+      duration: 0.3,
+      y: -3,
+      skewX: 0,
+      ease: "power1.inOut",
+    });
+  };
+
   return (
     <div ref={(el) => (menu = el)} className="hamburger-menu">
       <div
@@ -89,25 +147,43 @@ const Hamburger = ({ state }) => {
         className="menu-secondary-background-color"
       ></div>
       <div ref={(el) => (revealMenu = el)} className="menu-layer">
-        <div className="menu-city-background"></div>
+        <div
+          ref={(el) => (cityBackground = el)}
+          className="menu-city-background"
+        ></div>
         <div className="container">
           <div className="wrapper">
             <div className="menu-links">
               <nav>
                 <ul>
                   <li>
-                    <Link ref={(el) => (line1 = el)} to="/opportunities">
-                      Opportunities
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line1 = el)}
+                      to="/opportunities"
+                    >
+                      They all
                     </Link>
                   </li>
                   <li>
-                    <Link ref={(el) => (line2 = el)} to="/solutions">
-                      Solutions
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line2 = el)}
+                      to="/solutions"
+                    >
+                      have a
                     </Link>
                   </li>
                   <li>
-                    <Link ref={(el) => (line3 = el)} to="/contact-us">
-                      Contact us
+                    <Link
+                      onMouseEnter={(e) => handleHover(e)}
+                      onMouseOut={(e) => handleHoverExit(e)}
+                      ref={(el) => (line3 = el)}
+                      to="/contact-us"
+                    >
+                      STORY...
                     </Link>
                   </li>
                 </ul>
@@ -123,10 +199,15 @@ const Hamburger = ({ state }) => {
               </div>
               <div className="locations">
                 Locations:
-                <span>Africa</span>
-                <span>India</span>
-                <span>South America</span>
-                <span>Middle East</span>
+                {cities.map((el) => (
+                  <span
+                    key={el.name}
+                    onMouseEnter={() => handleCity(el.image)}
+                    onMouseOut={handleCityReturn}
+                  >
+                    {el.name}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

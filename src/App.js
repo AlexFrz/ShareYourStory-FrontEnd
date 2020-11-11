@@ -1,20 +1,26 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import jwtDecode from "jwt-decode";
+import { CSSTransition } from "react-transition-group";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
 // Pages
-import home from "./pages/home";
-import login from "./pages/login";
-import signup from "./pages/signup";
+import Stories from "./components/Stories";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import About from "./components/About";
 
 // Components
 import Header from "./components/Header";
 import AuthRoute from "./util/AuthRoute";
+import Title from "./components/Title";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 
 let authenticated;
 
@@ -36,34 +42,25 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <div className="container">
-            <div className="wrapper">
-              <div className="home">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <AuthRoute
-                    exact
-                    path="/login"
-                    component={login}
-                    authenticated={authenticated}
-                  />
-                  <AuthRoute
-                    exact
-                    path="/signup"
-                    component={signup}
-                    authenticated={authenticated}
-                  />
-                  <Route
-                    exact
-                    path="/opportunities"
-                    component={Opportunities}
-                  />
-                  <Route exact path="/solutions" component={Solutions} />
-                  <Route exact path="/contact-us" component={Contact} />
-                </Switch>
-              </div>
-            </div>
-          </div>
+          <Home />
+          <Stories />
+
+          <Switch>
+            <AuthRoute
+              exact
+              path="/Login"
+              component={Login}
+              authenticated={authenticated}
+            />
+            <AuthRoute
+              exact
+              path="/Signup"
+              component={Signup}
+              authenticated={authenticated}
+            />
+          </Switch>
+
+          <Navbar />
         </div>
       </Router>
     </Provider>
@@ -81,17 +78,4 @@ function Contact() {
   return <p>Feel free to reach us.</p>;
 }
 
-function Home() {
-  return (
-    <div className="container">
-      <div className="wrapper">
-        <h5>
-          The <b>HAMBRG</b>, is a creative, engineer driven, global agency
-          working on advancing the software, advertising and design communities
-          to new heights.
-        </h5>
-      </div>
-    </div>
-  );
-}
 export default App;

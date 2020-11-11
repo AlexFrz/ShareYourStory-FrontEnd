@@ -67,12 +67,6 @@ class signup extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img
-            src={AppIcon}
-            alt="shareyourstory"
-            width="500"
-            className={classes.image}
-          ></img>
           <Typography variant="h3" className={classes.pageTitle}></Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField

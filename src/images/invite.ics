@@ -1,0 +1,151 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:Romance Standard Time
+BEGIN:STANDARD
+DTSTART:16011028T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010325T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN=frezoul.alex@gmail.com;RSVP=TRUE:mailto:frezoul.alex@gmail.com
+CLASS:PUBLIC
+CREATED:20201109T100955Z
+DESCRIPTION:Alex\,\n\n \n\nComme convenu à l’instant je vous confirme no
+	tre échange Zoom lundi 9 novembre à 17h30.\n\n \n\nPour joindre la réun
+	ion : https://us04web.zoom.us/j/74402060090?pwd=SXFwNE1ublgyQ0NjUk1sZTlMTV
+	BGQT09 \n\nID de réunion : 744 0206 0090 \nCode secret : 4SCWLJ \n\n \n\n
+	Dans l’attente je vous souhaite une bonne journée.\n\n \n\nBien cordial
+	ement\,\n\nElodie\n\n \n\n <https://nam01.safelinks.protection.outlook.com
+	/?url=http%3A%2F%2Fpo-wo.fr%2F&data=02%7C01%7C%7Cd47ea8f390f941dc0d5808d5f
+	e0a26be%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C636694241903764194&sd
+	ata=P%2BoadtqoYysBz%2Fr%2FSxmMh0%2FyqUVR7zHnC3duhdisy%2F4%3D&reserved=0> \
+	n\n \n\nElodie Garric\n\nInfluencer Manager\n\n  \n\n06 64 87 03 44\n\n \n
+	\n  <https://www.linkedin.com/company/po-wo/> \n\nNos Locaux :  17 Allée 
+	des Demoiselles\, Rez-de-chaussée\, 31400 Toulouse\n\nAccès :  Bus Ligne
+	 7 dir. CC St Orens\, Arrêt Frizac depuis les stations Esquirol ou Franç
+	ois Verdier\n\n \n\n \n\n \n\n
+DTEND;TZID="Romance Standard Time":20201109T183000
+DTSTAMP:20201109T100955Z
+DTSTART;TZID="Romance Standard Time":20201109T173000
+LAST-MODIFIED:20201109T100955Z
+LOCATION:Zoom
+ORGANIZER;CN=elodie.garric@po-wo.com:mailto:elodie.garric@po-wo.com
+PRIORITY:5
+SEQUENCE:1
+SUMMARY;LANGUAGE=fr:Meeting Powo - Alex Frezoul
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E00800000000907BA6D37FB3D601000000000000000
+	01000000075421667C3BCB44DB8043D63307AD747
+X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml" 
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-mic
+	rosoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/
+	12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv=Co
+	ntent-Type content="text/html\; charset=iso-8859-1"><meta name=Generator c
+	ontent="Microsoft Word 15 (filtered medium)"><!--[if !mso]><style>v\\:* {b
+	ehavior:url(#default#VML)\;}\no\\:* {behavior:url(#default#VML)\;}\nw\\:* 
+	{behavior:url(#default#VML)\;}\n.shape {behavior:url(#default#VML)\;}\n</s
+	tyle><![endif]--><style><!--\n/* Font Definitions */\n@font-face\n	{font-f
+	amily:"Cambria Math"\;\n	panose-1:2 4 5 3 5 4 6 3 2 4\;}\n@font-face\n	{fo
+	nt-family:Calibri\;\n	panose-1:2 15 5 2 2 2 4 3 2 4\;}\n@font-face\n	{font
+	-family:"Segoe UI Emoji"\;\n	panose-1:2 11 5 2 4 2 4 2 2 3\;}\n/* Style De
+	finitions */\np.MsoNormal\, li.MsoNormal\, div.MsoNormal\n	{margin:0cm\;\n
+		margin-bottom:.0001pt\;\n	font-size:11.0pt\;\n	font-family:"Calibri"\,san
+	s-serif\;}\na:link\, span.MsoHyperlink\n	{mso-style-priority:99\;\n	color:
+	blue\;\n	text-decoration:underline\;}\nspan.EmailStyle18\n	{mso-style-type
+	:personal-compose\;}\n.MsoChpDefault\n	{mso-style-type:export-only\;\n	fon
+	t-size:10.0pt\;}\n@page WordSection1\n	{size:612.0pt 792.0pt\;\n	margin:70
+	.85pt 70.85pt 70.85pt 70.85pt\;}\ndiv.WordSection1\n	{page:WordSection1\;}
+	\n--></style><!--[if gte mso 9]><xml>\n<o:shapedefaults v:ext="edit" spidm
+	ax="1026" />\n</xml><![endif]--><!--[if gte mso 9]><xml>\n<o:shapelayout v
+	:ext="edit">\n<o:idmap v:ext="edit" data="1" />\n</o:shapelayout></xml><![
+	endif]--></head><body lang=FR link=blue vlink=purple><div class=WordSectio
+	n1><p style='margin:0cm\;margin-bottom:.0001pt'>Alex\,<o:p></o:p></p><p st
+	yle='margin:0cm\;margin-bottom:.0001pt'><o:p>&nbsp\;</o:p></p><p style='ma
+	rgin:0cm\;margin-bottom:.0001pt'>Comme convenu à l&#8217\;instant je vous
+	 confirme notre échange Zoom lundi 9 novembre à 17h30.<o:p></o:p></p><p 
+	style='margin:0cm\;margin-bottom:.0001pt'><o:p>&nbsp\;</o:p></p><p style='
+	margin:0cm\;margin-bottom:.0001pt'>Pour joindre la réunion&nbsp\;: <a hre
+	f="https://us04web.zoom.us/j/74402060090?pwd=SXFwNE1ublgyQ0NjUk1sZTlMTVBGQ
+	T09">https://us04web.zoom.us/j/74402060090?pwd=SXFwNE1ublgyQ0NjUk1sZTlMTVB
+	GQT09</a> <o:p></o:p></p><p style='margin:0cm\;margin-bottom:.0001pt'>ID d
+	e réunion&nbsp\;: 744 0206 0090 <br>Code secret&nbsp\;: 4SCWLJ <o:p></o:p
+	></p><p style='margin:0cm\;margin-bottom:.0001pt'><o:p>&nbsp\;</o:p></p><p
+	 style='margin:0cm\;margin-bottom:.0001pt'>Dans l&#8217\;attente je vous s
+	ouhaite une bonne journée.<o:p></o:p></p><p style='margin:0cm\;margin-bot
+	tom:.0001pt'><o:p>&nbsp\;</o:p></p><p style='margin:0cm\;margin-bottom:.00
+	01pt'>Bien cordialement\,<o:p></o:p></p><p style='margin:0cm\;margin-botto
+	m:.0001pt'>Elodie<o:p></o:p></p><p class=MsoNormal><o:p>&nbsp\;</o:p></p><
+	table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='mar
+	gin-left:5.4pt\;border-collapse:collapse'><tr><td width=286 style='width:2
+	14.6pt\;border-top:solid #1A1718 2.25pt\;border-left:none\;border-bottom:s
+	olid #1A1718 2.25pt\;border-right:none\;padding:0cm 5.4pt 0cm 5.4pt'><p cl
+	ass=MsoNormal align=center style='text-align:center\;text-autospace:none'>
+	<a href="https://nam01.safelinks.protection.outlook.com/?url=http%3A%2F%2F
+	po-wo.fr%2F&amp\;data=02%7C01%7C%7Cd47ea8f390f941dc0d5808d5fe0a26be%7C84df
+	9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C636694241903764194&amp\;sdata=P%2Bo
+	adtqoYysBz%2Fr%2FSxmMh0%2FyqUVR7zHnC3duhdisy%2F4%3D&amp\;reserved=0"><span
+	 style='font-size:14.0pt\;font-family:"Arial"\,sans-serif\;color:#0000E9\;
+	text-decoration:none'><img border=0 width=200 height=175 style='width:2.08
+	33in\;height:1.8229in' id="x_Image_x0020_1" src="cid:image001.png@01D6B380
+	.531A32E0"></span></a><o:p></o:p></p></td><td width=247 style='width:185.4
+	pt\;border-top:solid #1A1718 2.25pt\;border-left:none\;border-bottom:solid
+	 #1A1718 2.25pt\;border-right:none\;padding:0cm 5.4pt 0cm 5.4pt'><p class=
+	MsoNormal align=center style='text-align:center\;text-autospace:none'><spa
+	n style='font-size:14.0pt\;font-family:"Arial"\,sans-serif\;color:#1A1718'
+	>&nbsp\;</span><o:p></o:p></p><p class=MsoNormal align=center style='text-
+	align:center\;text-autospace:none'><b><span style='font-size:16.0pt\;font-
+	family:"Arial"\,sans-serif\;color:#1A1718'>Elodie Garric</span></b><o:p></
+	o:p></p><p class=MsoNormal align=center style='text-align:center\;text-aut
+	ospace:none'><b><span style='font-size:14.0pt\;font-family:"Arial"\,sans-s
+	erif\;color:#E4B30C'>Influencer Manager</span></b><span style='font-size:1
+	4.0pt\;font-family:"Arial"\,sans-serif\;color:#1A1718'><o:p></o:p></span><
+	/p><p class=MsoNormal align=center style='text-align:center\;text-autospac
+	e:none'><span style='font-size:14.0pt\;font-family:"Arial"\,sans-serif\;co
+	lor:#1A1718'>&nbsp\;&nbsp\;</span><o:p></o:p></p><p class=MsoNormal align=
+	center style='text-align:center\;text-autospace:none'><b><span style='font
+	-size:14.0pt\;font-family:"Arial"\,sans-serif\;color:#1A1718'>06 64 87 03 
+	44</span></b><o:p></o:p></p><p class=MsoNormal align=center style='text-al
+	ign:center\;text-autospace:none'><span style='font-size:14.0pt\;font-famil
+	y:"Arial"\,sans-serif\;color:#1A1718'>&nbsp\;</span><o:p></o:p></p><p clas
+	s=MsoNormal align=center style='text-align:center\;text-autospace:none'><s
+	pan style='font-size:14.0pt\;font-family:"Arial"\,sans-serif\;color:#1A171
+	8'>&nbsp\;</span><a href="https://www.linkedin.com/company/po-wo/"><span s
+	tyle='font-size:14.0pt\;font-family:"Arial"\,sans-serif\;color:#1A1718\;te
+	xt-decoration:none'><img border=0 width=45 height=45 style='width:.4687in\
+	;height:.4687in' id="x_Image_x0020_2" src="cid:image002.png@01D6B380.531A3
+	2E0" alt=Linkedin-1></span></a><o:p></o:p></p></td></tr></table><p class=M
+	soNormal><b><u>Nos&nbsp\;Locaux&nbsp\;:</u> </b><b><span style='font-famil
+	y:"Segoe UI Emoji"\,sans-serif'>&nbsp\;</span>17 Allée des Demoiselles\, 
+	Rez-de-chaussée\, 31400 Toulouse<o:p></o:p></b></p><p class=MsoNormal><b>
+	<u>Accès&nbsp\;:</u> &nbsp\;Bus Ligne 7 dir. CC St Orens\, Arrêt Frizac 
+	depuis les stations Esquirol ou François Verdier<o:p></o:p></b></p><p cla
+	ss=MsoNormal><b><o:p>&nbsp\;</o:p></b></p><p class=MsoNormal><o:p>&nbsp\;<
+	/o:p></p><p style='margin:0cm\;margin-bottom:.0001pt'><o:p>&nbsp\;</o:p></
+	p></div></body></html>
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-APPTSEQTIME:20201105T133118Z
+X-MS-OLK-AUTOSTARTCHECK:FALSE
+X-MS-OLK-CONFTYPE:0
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+

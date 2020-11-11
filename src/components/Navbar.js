@@ -3,27 +3,42 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 // MUI stuff
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
+import { NavLink } from "react-router-dom";
 
 export class Navbar extends Component {
   render() {
     return (
-      <div className="navbar">
-        <AppBar>
-          <Toolbar className="nav__container">
-            <Button color="inherit" component={Link} to="/login">
-              Login
-            </Button>
-            <Button color="inherit" component={Link} to="/">
-              Home
-            </Button>
-            <Button color="inherit" component={Link} to="/signup">
-              Signup
-            </Button>
-          </Toolbar>
-        </AppBar>
+      <div className="page">
+        <div className="header">
+          <NavLink
+            to="/"
+            exact
+            activeStyle={{ fontWeight: "bold", color: "red" }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/stories"
+            exact
+            activeStyle={{ fontWeight: "bold", color: "red" }}
+          >
+            Stories
+          </NavLink>
+          <NavLink
+            to="/signup"
+            exact
+            activeStyle={{ fontWeight: "bold", color: "red" }}
+          >
+            Sign up
+          </NavLink>
+          <NavLink
+            to="/about"
+            exact
+            activeStyle={{ fontWeight: "bold", color: "red" }}
+          >
+            About us
+          </NavLink>
+        </div>
       </div>
     );
   }
