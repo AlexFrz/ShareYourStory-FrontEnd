@@ -31,26 +31,7 @@ class stories extends Component {
       <div className="page">
         <div className="cards">
           <h1>Stories of the month</h1>
-          <div className="cardrow">
-            <div className="card card__one">
-              <div className="card__bg"></div>
-              <div class="card__text">
-                <p class="card__title">Brad Pitt</p>
-              </div>
-            </div>
-            <div class="card card__two">
-              <div class="card__bg"></div>
-              <div class="card__text">
-                <p class="card__title">Marilyn Monroe</p>
-              </div>
-            </div>
-            <div class="card card__three">
-              <div class="card__bg"></div>
-              <div class="card__text">
-                <p class="card__title">Johnny Wilkinson</p>
-              </div>
-            </div>
-          </div>
+          <div className="cardrow">{recentStoryMarkup}</div>
         </div>
       </div>
     );

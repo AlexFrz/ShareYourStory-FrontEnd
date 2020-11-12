@@ -53,23 +53,8 @@ $black: #191919;
   }
 }
 
-.card__img {
-  position: relative;
-  height: 100%;
-}
-
-.card__bg {
-  bottom: -50px;
-  left: -50px;
-  position: absolute;
-  right: -50px;
-  top: -50px;
-  z-index: 0;
-}
-
-.card__one {
+.card {
   .card__bg {
-    background: url("../images/middleeast.jpg") center / cover no-repeat;
     opacity: 0.9;
     transition: transform 450ms;
   }
@@ -82,42 +67,19 @@ $black: #191919;
   }
 }
 
-.card__two {
-  .card__bg {
-    background: url("../images/work.jpg") center / cover no-repeat;
-    opacity: 0.9;
-    transition: transform 450ms;
-  }
-  .card__bg:hover {
-    opacity: 1;
-    transform: scale(1.08);
-  }
-  .card__text {
-    //background-color: #274a2e;
-  }
+.card__bg {
+  bottom: -50px;
+  left: -50px;
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  z-index: 0;
 }
 
-.card__three {
-  .card__bg {
-    background: url("../images/southamerica.jpg") center / cover no-repeat;
-    opacity: 0.9;
-    transition: transform 450ms;
-  }
-  .card__bg:hover {
-    opacity: 1;
-    transform: scale(1.08);
-  }
-  .card__text {
-    //background-color: #3e2222;
-  }
-}
-
-@media (max-width: 1000px) {
-  .cardrow {
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-  }
+.cardrow {
+  display: flex;
+  width: auto;
+  scroll-snap-type: x mandatory;
 }
 
 .card__text {
