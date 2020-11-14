@@ -12,7 +12,7 @@ import store from "./redux/store";
 // Pages
 import Stories from "./components/Stories";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Signup from "./pages/signup";
 import About from "./components/About";
 
 // Components
@@ -21,6 +21,7 @@ import AuthRoute from "./util/AuthRoute";
 import Title from "./components/Title";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Donate from "./components/Donate";
 
 let authenticated;
 
@@ -41,10 +42,16 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          <Header />
-          <Home />
-          <Stories />
-
+          <section>
+            <Header />
+            <Home />
+          </section>
+          <section>
+            <Stories />
+          </section>
+          <section>
+            <Donate />
+          </section>
           <Switch>
             <AuthRoute
               exact
@@ -59,8 +66,6 @@ function App() {
               authenticated={authenticated}
             />
           </Switch>
-
-          <Navbar />
         </div>
       </Router>
     </Provider>
