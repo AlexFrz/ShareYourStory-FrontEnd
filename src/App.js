@@ -11,7 +11,7 @@ import store from "./redux/store";
 
 // Pages
 import Stories from "./components/Stories";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Signup from "./pages/signup";
 import About from "./components/About";
 
