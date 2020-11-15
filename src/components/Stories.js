@@ -28,9 +28,9 @@ class stories extends Component {
     );
 
     return (
-      <div className="cards">
+      <div className="cards__section">
         <h1>Stories of the month</h1>
-        <div className="cardrow">{recentStoryMarkup}</div>
+        <div className="card__container">{recentStoryMarkup}</div>
       </div>
     );
   }

@@ -2,29 +2,30 @@
 $red: #e20001;
 $black: #191919;
 
-.cards {
-  display: inline-block;
-  padding: 0 35px;
-  scroll-snap-type: x proximity;
-  scroll-padding: 50%;
-  text-align: left;
-  width: 2000px;
-  margin: 0;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
-.cards h1 {
+.cards__section {
+  display: inline-block;
+  padding: 0 0 0 40px;
+  scroll-snap-type: x proximity;
+  scroll-padding: 50%;
+  text-align: left;
+  margin: 0;
+  width: calc(100% - 40px);
+}
+
+.cards__section h1 {
   color: #3e3e42;
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -1px;
   margin: 0 !important;
+  align-self: flex-start;
 }
 
-.cards h3 {
+.cards__section h3 {
   color: #eb285d;
   font-size: 16px;
   margin: 0 !important;
@@ -35,18 +36,47 @@ $black: #191919;
   font-weight: bold;
 }
 
+.card__container {
+  scroll-snap-type: x mandatory;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  box-sizing: border-box;
+  @media (max-width: 900px) {
+    max-width: 375px;
+  }
+  position: relative;
+  scrollbar-width: none;
+}
+
+.cards__wrapper {
+  padding: 1rem;
+  width: 375px;
+  min-width: 375px;
+  box-sizing: border-box;
+}
+
+.card-container > .card-wrapper {
+  scroll-snap-align: none;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
 .card {
   border-radius: 15px;
-  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   display: inline-block;
+  box-sizing: border-box;
   height: 85vh;
   overflow: hidden;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  perspective: 1200px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  perspective: 500px;
   position: relative;
-  width: 30%;
+  width: 350px;
   text-align: center;
 
   &:not(:last-child) {
@@ -80,8 +110,8 @@ $black: #191919;
 .cardrow {
   display: flex;
   width: auto;
-  overflow-x: scroll;
-  scroll-snap-type: x proximity;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
 .card__text2 {
