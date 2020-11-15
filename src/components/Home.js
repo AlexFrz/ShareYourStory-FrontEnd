@@ -1,10 +1,15 @@
 import React, { Fragment } from "react";
 import "./Home.scss";
+import cover from "../images/cover.mp4";
 
 function Home() {
   return (
     <Fragment>
       <div className="container">
+        <video autoPlay cover loop muted className="background-video">
+          <source src={cover} type="video/mp4" />
+          <source src={cover} type="video/ogg" />
+        </video>
         <div className="wrapper">
           <div className="home">
             <h5>
@@ -15,6 +20,8 @@ function Home() {
             </h5>
           </div>
         </div>
+        <div class="arrow arrow-first"></div>
+        <div class="arrow arrow-second"></div>
       </div>
     </Fragment>
   );

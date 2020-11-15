@@ -16,6 +16,13 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     marginLeft: 30,
     minWidth: 400,
+    marginTop: "-12px",
+    [theme.breakpoints.down("md")]: {
+      width: 100,
+      minWidth: 100,
+      marginTop: "-12px",
+      marginLeft: 10,
+    },
   },
   inputLabel: {
     fontSize: "4rem",
@@ -23,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: "#fff",
     textShadow: "-1px 4px 10px rgba(0, 0, 0, 0.1)",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem",
+      marginTop: "-12px",
+    },
   },
   select: {
     minWidth: 200,
@@ -37,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 25,
     paddingBottom: 15,
     boxShadow: "0px 5px 8px -3px rgba(0,0,0,0.14)",
+    [theme.breakpoints.down("md")]: {
+      width: 100,
+      paddingTop: 0,
+    },
     "&:focus": {
       borderRadius: 12,
       background: "white",
@@ -88,50 +103,61 @@ function Donnate() {
   const onClick = () => setIsActive(!isActive);
 
   return (
-    <div className="donate">
-      <div className="donate__line">
-        <h1 className="donate__text">I AM :</h1>
-        <input type="text" className="donate__input" placeholder="NAME" />
-      </div>
-      <div className="donate__line">
-        <h1 className="donate__text">MY EMAIL IS :</h1>
-        <input type="text" className="donate__input" placeholder="EMAIL" />
-      </div>
-      <div className="dollar">
-        <h1 className="donate__text">& I WANNA DONATE :</h1>
-        <input type="text" className="donate__input" placeholder="10" />
-        <h1 className="donate__text">$</h1>
-      </div>
-      <div className="donate__line">
-        <h1 className="donate__text_to">
-          TO :
-          <FormControl className={classes.formControl}>
-            <InputLabel className={classes.inputLabel}>WHO?</InputLabel>
+    <div className="donnate__container">
+      <div className="donate">
+        <div className="donate__line">
+          <h1 className="donate__text">I AM </h1>
+          <input type="text" className="donate__input" placeholder="NAME" />
+        </div>
+        <div className="donate__line">
+          <h1 className="donate__text">MY EMAIL </h1>
+          <input type="text" className="donate__input" placeholder="EMAIL" />
+        </div>
+        <div className="dollar">
+          <h1 className="donate__text">& I GIVE </h1>
+          <div className="how-much">
+            <input type="text" className="donate__input" placeholder="10" />
+            <h1 className="donate__text">$</h1>
+          </div>
+        </div>
+        <div className="donate__line">
+          <div className="how-much">
+            <h1 className="donate__text_to">TO </h1>
+            <FormControl className={classes.formControl}>
+              <InputLabel className={classes.inputLabel}>WHO?</InputLabel>
 
-            <Select
-              className={classes.select}
-              multiple
-              multiple
-              value={personName}
-              onChange={handleChange}
-            >
-              <MenuItem className={classes.list} value="Altira Djal">
-                Altira Djal
-              </MenuItem>
-              <MenuItem className={classes.list} value="Inana Patali">
-                Inana Patali
-              </MenuItem>
-              <MenuItem className={classes.list} value="Martha Lincel">
-                Martha Lincel
-              </MenuItem>
-              <MenuItem className={classes.list} value="Alex Frezoul">
-                Alex Frezoul
-              </MenuItem>
-            </Select>
-          </FormControl>
-        </h1>
+              <Select
+                className={classes.select}
+                multiple
+                multiple
+                value={personName}
+                onChange={handleChange}
+              >
+                <MenuItem className={classes.list} value="Altira Djal">
+                  Altira Djal
+                </MenuItem>
+                <MenuItem className={classes.list} value="Inana Patali">
+                  Inana Patali
+                </MenuItem>
+                <MenuItem className={classes.list} value="Martha Lincel">
+                  Martha Lincel
+                </MenuItem>
+                <MenuItem className={classes.list} value="Alex Frezoul">
+                  Alex Frezoul
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+        </div>
+        <a href="#" class="cta">
+          <span>Donate</span>
+          <svg width="13px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
       </div>
-      <button>DONATE</button>
+      <div className="box"></div>
     </div>
   );
 }

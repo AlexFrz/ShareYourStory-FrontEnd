@@ -1,11 +1,31 @@
 $red: #e20001;
 $black: #191919;
 
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
 a:-webkit-any-link {
   text-decoration: none !important;
 }
 
+.donnate__container {
+  display: flex;
+  width: 101vw;
+}
+
+.box {
+  flex: 0.5;
+  background-color: $red;
+  height: 100vh;
+  border-radius: 15px;
+}
+
 .donate {
+  flex: 0.5;
+  height: 100vh;
   width: 100vw;
   justify-content: center;
   padding: 20px 34px;
@@ -20,6 +40,7 @@ a:-webkit-any-link {
   font-size: 4rem;
   color: $red;
   text-shadow: -1px 4px 10px rgba(0, 0, 0, 0.3);
+  width: 60%;
 }
 
 .donate__input {
@@ -27,7 +48,7 @@ a:-webkit-any-link {
   padding-left: 20px;
   line-height: 4rem;
   font-family: "Poppins";
-  width: 60vw;
+  width: 50%;
   overflow-x: visible;
   border: none;
   font-size: 5rem;
@@ -55,14 +76,18 @@ a:-webkit-any-link {
 }
 
 .donate__text_to {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   font-size: 4rem;
   color: $red;
   text-shadow: -1px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.how-much {
+  display: flex;
+}
+
 .donate button {
-  margin-left: 30%;
+  margin-left: 2%;
   background: $red;
   color: #fff;
   text-shadow: -1px 4px 10px rgba(0, 0, 0, 0.3);
@@ -75,6 +100,68 @@ a:-webkit-any-link {
   box-shadow: -1px 4px 10px rgba(0, 0, 0, 0.3);
   width: 500px;
   height: 5.5rem;
+}
+
+.donate button:hover {
+  background: white;
+  border: solid 3px $red;
+  color: yellow;
+}
+
+@media (max-width: 1000px) {
+  .donate {
+    padding: 20px;
+    height: 100vh;
+    display: block;
+  }
+  .donate__line {
+    display: block !important;
+    height: 20%;
+  }
+
+  .how-much {
+    display: flex;
+  }
+  .donate__text {
+    font-size: 2.5rem;
+    height: 50%;
+    text-shadow: -1px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dollar .donate__text {
+    width: 60%;
+  }
+
+  .donate__input {
+    height: 30%;
+    line-height: 40px;
+    font-size: 2.5rem;
+    padding: 0;
+    width: 100%;
+    margin-top: -5px;
+    margin-left: 10px;
+  }
+  .donate__input::placeholder {
+    font-size: 2.5rem;
+  }
+
+  .dollar .donate__input {
+    width: 75px;
+    line-height: 40px;
+    padding-bottom: 35px;
+    margin-top: 10px;
+  }
+
+  .donate__text_to {
+    font-size: 2.5rem;
+  }
+  .donate button {
+    font-size: 2.5rem;
+    height: 3.5rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 90vw;
+  }
 }
 
 .typo {
@@ -168,4 +255,56 @@ select {
   &:hover {
     color: lighten($black, 20%);
   }
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 19px 22px;
+  transition: all 0.2s ease;
+  color: #fff;
+  text-shadow: -1px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: $red;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.cta span {
+  position: relative;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.cta:hover:before {
+  width: 100%;
+  background: $red;
+}
+.cta:hover svg {
+  transform: translateX(0);
+}
+.cta:active {
+  transform: scale(0.96);
 }

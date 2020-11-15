@@ -1,15 +1,20 @@
 .container {
+  position: relative;
   margin: 0 auto;
   width: auto;
   height: 100vh;
   .wrapper {
     margin: 0 0 0 48px;
     .home {
+      position: absolute;
+      top: 0;
+      z-index: 1;
       display: flex;
+      color: #fff;
       justify-content: center;
       align-items: center;
       height: 60vh;
-      width: 100vw;
+      width: 60vw;
       overflow: hidden;
       margin-bottom: 200px;
       @media (min-width: 1000px) {
@@ -36,4 +41,14 @@
       }
     }
   }
+}
+
+.background-video {
+  position: relative;
+  object-fit: cover;
+  margin-top: -250px;
+  height: 125vh;
+  width: 110vw;
+  left: 0;
+  z-index: -1;
 }

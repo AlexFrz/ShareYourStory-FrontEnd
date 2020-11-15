@@ -183,7 +183,7 @@ const Hamburger = ({ state }) => {
                       ref={(el) => (line3 = el)}
                       to="/contact-us"
                     >
-                      STORY...
+                      story.
                     </Link>
                   </li>
                 </ul>

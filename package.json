@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@egjs/flicking": "^3.6.2",
+    "@egjs/flicking-plugins": "^3.3.0",
+    "@egjs/react-flicking": "^3.4.2",
     "@glidejs/glide": "^3.4.1",
     "@material-ui/core": "^4.11.0",
     "@testing-library/jest-dom": "^5.11.5",
