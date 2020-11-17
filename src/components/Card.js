@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Story.scss";
+import "./Card.scss";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
@@ -17,5 +17,21 @@ export default function Story({
     commentCount,
   },
 }) {
-  return <div className="background">{body}</div>;
+  const [AnimatePresence, cycleCard] = useCycle();
+
+  return (
+    <div className="cards__wrapper">
+      <div className="card fadeIn">
+        <div
+          className="card__bg"
+          style={{
+            background: `url(${userImage}) center / cover no-repeat`,
+          }}
+        ></div>
+        <div class="card__text">
+          <p class="card__title">{userHandle}</p>
+        </div>
+      </div>
+    </div>
+  );
 }

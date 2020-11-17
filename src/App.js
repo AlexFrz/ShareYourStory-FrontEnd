@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
+
 import jwtDecode from "jwt-decode";
 import { CSSTransition } from "react-transition-group";
-import { Link, animateScroll as scroll } from "react-scroll";
 
 // Redux
 import { Provider } from "react-redux";
@@ -22,6 +22,7 @@ import Title from "./components/Title";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Donate from "./components/Donate";
+import Story from "./components/Story";
 
 let authenticated;
 
@@ -42,16 +43,19 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-          <section>
+          <section className="section__one">
             <Header />
             <Home />
           </section>
           <section>
             <Stories />
           </section>
+
           <section>
+            <button className="home__button wider">Want to give back?</button>
             <Donate />
           </section>
+
           <Switch>
             <AuthRoute
               exact

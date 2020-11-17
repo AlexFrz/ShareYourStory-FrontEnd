@@ -14,11 +14,12 @@ function Home() {
           <div className="home">
             <h5>
               The <b>THEIRSTORIES</b> project is a non-profit organization of
-              persons that has a common vision: a more equalitarian world.
-              That's why they travel, meeting the most wonderful persons of this
-              world, and share their stories to the world.
+              journalists that have a common vision: a more equalitarian world.
+              That's why they travel, meeting the most wonderful people, and
+              share their stories to the world.
             </h5>
           </div>
+          <button className="home__button">They all have a Story.</button>
         </div>
         <div class="arrow arrow-first"></div>
         <div class="arrow arrow-second"></div>

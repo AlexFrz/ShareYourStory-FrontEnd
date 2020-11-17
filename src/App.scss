@@ -19,18 +19,29 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+input {
+  background-color: transparent !important;
+}
+
 .App {
   overflow-y: scroll;
   height: 100vh;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh);
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(110vh);
+  scroll-snap-type: y proximity;
 }
 
 section {
-  height: 110vh;
+  height: 120vh;
   scroll-snap-align: start;
   position: relative;
+  overflow: hidden;
+}
+
+.section__one {
+  position: relative;
+  z-index: 10;
+  visibility: visible;
 }
 
 // Header
