@@ -47,29 +47,29 @@ function App() {
             <Header />
             <Home />
           </section>
-          <section>
-            <Stories />
+          <section style={{ height: "100vh" }}>
+            <Switch>
+              <Stories />
+            </Switch>
           </section>
 
-          <section>
-            <button className="home__button wider">Want to give back?</button>
+          <section style={{ height: "100vh" }}>
             <Donate />
           </section>
 
-          <Switch>
-            <AuthRoute
-              exact
-              path="/Login"
-              component={Login}
-              authenticated={authenticated}
-            />
-            <AuthRoute
-              exact
-              path="/Signup"
-              component={Signup}
-              authenticated={authenticated}
-            />
-          </Switch>
+          <AuthRoute
+            exact
+            path="/Login"
+            component={Login}
+            authenticated={authenticated}
+          />
+          <AuthRoute
+            exact
+            path="/Signup"
+            component={Signup}
+            authenticated={authenticated}
+          />
+          <Route path="/stories/:story" component={Story} />
         </div>
       </Router>
     </Provider>

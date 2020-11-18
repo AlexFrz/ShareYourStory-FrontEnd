@@ -4,8 +4,9 @@ import axios from "axios";
 import Card from "./Card";
 import Title from "./Title";
 import "./Stories.scss";
-import { Link } from "react-router-dom";
+import { Link, history, Router, Route, Redirect } from "react-router-dom";
 import wave1 from "../images/wave (1).svg";
+import Story from "./Card";
 
 class stories extends Component {
   state = {
@@ -17,15 +18,14 @@ class stories extends Component {
       .get("/stories")
       .then((res) => {
         this.setState({ stories: res.data });
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }
   render() {
     let recentStoryMarkup = this.state.stories ? (
       this.state.stories.map((story) => (
-        <Link to={`/stories/${story.storyId}`} story={story}>
-          <Card key={story.storyId} story={story} />
-        </Link>
+        <Card key={story.storyId} story={story} onClick={this.handleClick} />
       ))
     ) : (
       <p> Loading...</p>

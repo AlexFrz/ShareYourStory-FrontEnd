@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Card.scss";
+import "./Story.css";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
@@ -21,7 +21,7 @@ export default function Story({
 
   return (
     <div className="cards__wrapper">
-      <div className="card fadeIn">
+      <div className="card">
         <div
           className="card__bg"
           style={{

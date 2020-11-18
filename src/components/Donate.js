@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./Donate.scss";
 import styled, { css } from "styled-components";
 import { deepPurple } from "@material-ui/core/colors";
-import wave from "../images/wave.svg";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import {
   Select,
@@ -11,6 +11,7 @@ import {
   InputLabel,
   makeStyles,
   InputBase,
+  Button,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,23 +19,28 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 30,
     minWidth: 400,
     marginTop: "-12px",
+    marginLeft: "28vw",
     [theme.breakpoints.down("md")]: {
       width: 100,
       minWidth: 100,
       marginTop: "-12px",
-      marginLeft: 10,
+      marginLeft: "28vw",
     },
   },
   inputLabel: {
     fontSize: "4rem",
     fontFamily: "Poppins",
     fontWeight: "bold",
-    color: "#fff",
+    color: "#ff7373",
     textShadow: "-1px 4px 10px rgba(0, 0, 0, 0.1)",
     [theme.breakpoints.down("md")]: {
       fontSize: "2.5rem",
       marginTop: "-12px",
     },
+  },
+  heart: {
+    fontSize: "5rem",
+    color: "#ff7373",
   },
   select: {
     minWidth: 200,
@@ -81,14 +87,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Donnate() {
+function Donate() {
   const classes = useStyles();
-  const [personName, setPersonName] = React.useState([]);
 
+  // Logic for the select dropdown
+  const [personName, setPersonName] = React.useState([]);
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
-
   const handleChangeMultiple = (event) => {
     const { options } = event.target;
     const value = [];
@@ -100,6 +106,11 @@ function Donnate() {
     setPersonName(value);
   };
 
+  // Logic for the dialog
+  const [name, setName] = useState("NAME");
+  const [email, setEmail] = useState("EMAIL");
+  const [donation, setDonation] = useState("10");
+
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
 
@@ -109,16 +120,31 @@ function Donnate() {
         <div className="donate__wrapper">
           <di className="donate__line">
             <h1 className="donate__text">I AM </h1>
-            <input type="text" className="donate__input" placeholder="NAME" />
+            <input
+              value={name}
+              type="text"
+              className="donate__input"
+              onChange={(e) => setName(e.target.value)}
+            />
           </di>
           <div className="donate__line">
             <h1 className="donate__text">MY EMAIL </h1>
-            <input type="text" className="donate__input" placeholder="EMAIL" />
+            <input
+              type="text"
+              className="donate__input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-          <div className="dollar">
+          <div className="donate__line">
             <h1 className="donate__text">& I GIVE </h1>
             <div className="how-much">
-              <input type="text" className="donate__input" placeholder="10" />
+              <input
+                type="text"
+                className="donate__input"
+                value={donation}
+                onChange={(e) => setDonation(e.target.value)}
+              />
               <h1 className="donate__text">$</h1>
             </div>
           </div>
@@ -151,19 +177,15 @@ function Donnate() {
               </FormControl>
             </div>
           </div>
-
-          <a href="#" class="cta">
-            <span>Donate</span>
-            <svg width="13px" height="10px" viewBox="0 0 13 10">
-              <path d="M1,5 L11,5"></path>
-              <polyline points="8 1 12 5 8 9"></polyline>
-            </svg>
-          </a>
+          <div className="donate__line">
+            <Button className="donate__button">
+              NOW <FavoriteIcon className={classes.heart} />
+            </Button>
+          </div>
         </div>
-        <img class="wave" src={wave} />
       </div>
     </div>
   );
 }
 
-export default Donnate;
+export default Donate;
