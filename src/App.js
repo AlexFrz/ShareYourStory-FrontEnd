@@ -1,28 +1,13 @@
-import React, { Component, Fragment, useState, useRef, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
 import "./App.scss";
 
 import jwtDecode from "jwt-decode";
-import { CSSTransition } from "react-transition-group";
-
-// Redux
-import { Provider } from "react-redux";
-import store from "./redux/store";
-
-// Pages
-import Stories from "./components/Stories";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-import About from "./components/About";
 
 // Components
 import Header from "./components/Header";
-import AuthRoute from "./util/AuthRoute";
-import Title from "./components/Title";
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Donate from "./components/Donate";
-import Story from "./components/Story";
+import Stories from "./components/Stories";
 
 let authenticated;
 
@@ -40,51 +25,20 @@ if (token) {
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router>
-        <div className="App">
-          <section className="section__one">
-            <Header />
-            <Home />
-          </section>
-          <section style={{ height: "100vh" }}>
-            <Switch>
-              <Stories />
-            </Switch>
-          </section>
+    <div className="App">
+      <section className="section__one">
+        <Header />
+        <Home />
+      </section>
+      <section style={{ height: "100vh" }}>
+        <Stories />
+      </section>
 
-          <section style={{ height: "100vh" }}>
-            <Donate />
-          </section>
-
-          <AuthRoute
-            exact
-            path="/Login"
-            component={Login}
-            authenticated={authenticated}
-          />
-          <AuthRoute
-            exact
-            path="/Signup"
-            component={Signup}
-            authenticated={authenticated}
-          />
-          <Route path="/stories/:story" component={Story} />
-        </div>
-      </Router>
-    </Provider>
+      <section style={{ height: "100vh" }}>
+        <Donate />
+      </section>
+    </div>
   );
-}
-function Opportunities() {
-  return <p>Discover our numerous opportunities</p>;
-}
-
-function Solutions() {
-  return <p>Solutions that help you.</p>;
-}
-
-function Contact() {
-  return <p>Feel free to reach us.</p>;
 }
 
 export default App;

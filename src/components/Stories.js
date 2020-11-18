@@ -4,13 +4,18 @@ import axios from "axios";
 import Card from "./Card";
 import Title from "./Title";
 import "./Stories.scss";
-import { Link, history, Router, Route, Redirect } from "react-router-dom";
-import wave1 from "../images/wave (1).svg";
-import Story from "./Card";
+import { Link, Redirect } from "react-router-dom";
+import StoryDetails from "./StoryDetails";
 
 class stories extends Component {
   state = {
     stories: null,
+    goToDetails: false,
+  };
+
+  handleClick = (event) => {
+    event.preventDefault();
+    this.setState({ goToDetails: true });
   };
 
   componentDidMount() {
@@ -25,7 +30,9 @@ class stories extends Component {
   render() {
     let recentStoryMarkup = this.state.stories ? (
       this.state.stories.map((story) => (
-        <Card key={story.storyId} story={story} onClick={this.handleClick} />
+        <Link to={`/stories/${story.storyId}`} story={story}>
+          <Card key={story.storyId} story={story} onClick={this.handleClick} />
+        </Link>
       ))
     ) : (
       <p> Loading...</p>
