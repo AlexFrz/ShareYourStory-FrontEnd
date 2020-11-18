@@ -1,7 +1,73 @@
-.story {
-  position: absolute;
+.storyDetails {
+  display: flex;
   width: 100vw;
-  height: 300vh;
-  background-color: red;
-  color: white;
+  height: 100vh;
+  justify-content: space-between;
+  box-sizing: border-box;
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    font-size: 4em;
+    font-weight: 900;
+    line-height: 0.9;
+  }
+}
+
+.storyDetails__imageWrapper {
+  flex: 0.5;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.storyDetails__image {
+  width: 50vw;
+  object-fit: contain;
+  position: fixed;
+}
+
+.storyDetails__post {
+  flex: 0.5;
+  padding: 2em;
+}
+
+.storyDetails__timestamp {
+  display: inline-block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.storyDetails__handle {
+  width: 200px;
+  position: relative;
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-left: 30px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-line: overline;
+  line-height: 30px;
+  letter-spacing: 0.3em;
+  overflow: hidden;
+}
+
+.storyDetails__postContainer {
+  padding: 2em 4em;
+}
+
+.cards__section__title  {
+  padding-top: 40px;
+}
+
+.cards__section h1 {
+  padding-top: 10px;
+}
+.storyDetails__title {
+  padding-bottom: 20px;
+}
+
+.storyDetails__body {
+  overflow-y: scroll;
+  max-height: 100vh;
 }

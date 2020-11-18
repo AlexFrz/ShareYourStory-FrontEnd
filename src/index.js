@@ -8,7 +8,8 @@ import reportWebVitals from "./reportWebVitals";
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import Story from "./components/Story";
+import StoryDetails from "./components/StoryDetails";
+import Donate from "./components/Donate";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,7 +17,8 @@ ReactDOM.render(
       <Router>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route path="stories/:storyId" component={StoryDetails} />
+          <Route path="/stories/:storyId" component={StoryDetails} />
+          <Route exact path="/donate" component={Donate} />
         </Switch>
       </Router>
     </Provider>

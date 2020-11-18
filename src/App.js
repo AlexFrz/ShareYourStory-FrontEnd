@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Donate from "./components/Donate";
 import Stories from "./components/Stories";
+import DonateButton from "./DonateButton";
+import NewsLetter from "./components/NewsLetter";
 
 let authenticated;
 
@@ -32,10 +34,6 @@ function App() {
       </section>
       <section style={{ height: "100vh" }}>
         <Stories />
-      </section>
-
-      <section style={{ height: "100vh" }}>
-        <Donate />
       </section>
     </div>
   );

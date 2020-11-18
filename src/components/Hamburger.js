@@ -163,7 +163,7 @@ const Hamburger = ({ state }) => {
                       ref={(el) => (line1 = el)}
                       to="/opportunities"
                     >
-                      They all
+                      Volunteer,
                     </Link>
                   </li>
                   <li>
@@ -173,7 +173,7 @@ const Hamburger = ({ state }) => {
                       ref={(el) => (line2 = el)}
                       to="/solutions"
                     >
-                      have a
+                      Share or
                     </Link>
                   </li>
                   <li>
@@ -181,9 +181,9 @@ const Hamburger = ({ state }) => {
                       onMouseEnter={(e) => handleHover(e)}
                       onMouseOut={(e) => handleHoverExit(e)}
                       ref={(el) => (line3 = el)}
-                      to="/contact-us"
+                      to="/donate"
                     >
-                      story.
+                      Donate.
                     </Link>
                   </li>
                 </ul>

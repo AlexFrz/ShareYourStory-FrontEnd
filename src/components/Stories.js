@@ -1,11 +1,10 @@
-import Grid from "@material-ui/core/Grid";
 import React, { Component } from "react";
 import axios from "axios";
 import Card from "./Card";
-import Title from "./Title";
 import "./Stories.scss";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import StoryDetails from "./StoryDetails";
+import DonateButton from "../DonateButton";
 
 class stories extends Component {
   state = {
@@ -27,10 +26,16 @@ class stories extends Component {
       })
       .catch((err) => console.log(err));
   }
+
   render() {
     let recentStoryMarkup = this.state.stories ? (
       this.state.stories.map((story) => (
-        <Link to={`/stories/${story.storyId}`} story={story}>
+        <Link
+          to={{
+            pathname: `/stories/${story.storyId}`,
+            state: { story },
+          }}
+        >
           <Card key={story.storyId} story={story} onClick={this.handleClick} />
         </Link>
       ))
@@ -40,11 +45,12 @@ class stories extends Component {
 
     return (
       <div className="cards__section">
-        <h1 className="fadeIn">Stories of the month</h1>
+        <h1>Stories of the month</h1>
+        <DonateButton />
         <div className="card__container">{recentStoryMarkup}</div>
       </div>
     );
   }
 }
 
-export default stories;
+export default withRouter(stories);

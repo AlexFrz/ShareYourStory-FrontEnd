@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Fragment } from "react";
 import "./Donate.scss";
 import styled, { css } from "styled-components";
 import { deepPurple } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import Header from "./Header";
 
 import {
   Select,
@@ -13,22 +14,21 @@ import {
   InputBase,
   Button,
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    marginLeft: 30,
-    minWidth: 400,
-    marginTop: "-12px",
-    marginLeft: "28vw",
+    minWidth: 100,
+    marginBottom: 100,
     [theme.breakpoints.down("md")]: {
       width: 100,
       minWidth: 100,
       marginTop: "-12px",
-      marginLeft: "28vw",
+      marginLeft: "20px",
     },
   },
   inputLabel: {
-    fontSize: "4rem",
+    fontSize: "12vw",
     fontFamily: "Poppins",
     fontWeight: "bold",
     color: "#ff7373",
@@ -39,11 +39,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   heart: {
-    fontSize: "5rem",
+    fontSize: "12vw",
     color: "#ff7373",
   },
   select: {
-    minWidth: 200,
+    minWidth: 500,
+    minHeight: 160,
     color: "black",
     fontWeight: 600,
     fontFamily: "Poppins",
@@ -95,6 +96,7 @@ function Donate() {
   const handleChange = (event) => {
     setPersonName(event.target.value);
   };
+
   const handleChangeMultiple = (event) => {
     const { options } = event.target;
     const value = [];
@@ -115,41 +117,45 @@ function Donate() {
   const onClick = () => setIsActive(!isActive);
 
   return (
-    <div className="donnate__container">
-      <div className="donate">
-        <div className="donate__wrapper">
-          <di className="donate__line">
-            <h1 className="donate__text">I AM </h1>
-            <input
-              value={name}
-              type="text"
-              className="donate__input"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </di>
-          <div className="donate__line">
-            <h1 className="donate__text">MY EMAIL </h1>
-            <input
-              type="text"
-              className="donate__input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="donate__line">
-            <h1 className="donate__text">& I GIVE </h1>
-            <div className="how-much">
+    <div>
+      <div className="header__background">
+        <h1 className="donate__title">DONATE</h1>
+        <Header />
+      </div>
+      <div className="donnate__container">
+        <div className="donate">
+          <div className="donate__wrapper">
+            <div className="donate__line firstline">
+              <h1 className="donate__text">I AM </h1>
+              <input
+                value={name}
+                type="text"
+                className="donate__input"
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="donate__line">
+              <h1 className="donate__text">MY EMAIL </h1>
               <input
                 type="text"
                 className="donate__input"
-                value={donation}
-                onChange={(e) => setDonation(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <h1 className="donate__text">$</h1>
             </div>
-          </div>
-          <div className="donate__line">
-            <div className="how-much">
+            <div className="donate__line">
+              <h1 className="donate__text">& I GIVE </h1>
+              <div className="how-much">
+                <input
+                  type="text"
+                  className="donate__input"
+                  value={donation}
+                  onChange={(e) => setDonation(e.target.value)}
+                />
+                <h1 className="donate__text">$</h1>
+              </div>
+            </div>
+            <div className="donate__line">
               <h1 className="donate__text_to">TO </h1>
               <FormControl className={classes.formControl}>
                 <InputLabel className={classes.inputLabel}>WHO?</InputLabel>
@@ -176,11 +182,13 @@ function Donate() {
                 </Select>
               </FormControl>
             </div>
-          </div>
-          <div className="donate__line">
-            <Button className="donate__button">
-              NOW <FavoriteIcon className={classes.heart} />
-            </Button>
+            <div className="donate__line">
+              <Link to="/donate">
+                <Button to="/donate" className="donate__button">
+                  NOW <FavoriteIcon className={classes.heart} />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

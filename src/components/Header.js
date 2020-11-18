@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
+import styled, { css } from "styled-components";
 
 const Header = ({ history }) => {
   // State for menu button
